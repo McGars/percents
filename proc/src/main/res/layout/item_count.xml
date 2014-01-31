@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<TableRow xmlns:android="http://schemas.android.com/apk/res/android"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+    >
+
+    <TextView
+        android:id="@+id/tvYearMonth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2013.01"
+        android:padding="5dp"
+        />
+
+
+    <TextView
+        android:id="@+id/tvTakeoff"
+        android:layout_width="wrap_content"
+        android:layout_column="2"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:padding="5dp"
+        />
+
+    <TextView
+        android:id="@+id/tvIncoming"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        />
+
+    <TextView
+        android:id="@+id/tvCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="105.05"
+        android:layout_gravity="right"
+        android:padding="5dp"
+        />
+
+</TableRow>

@@ -1,0 +1,125 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:paddingRight="@dimen/activity_horizontal_margin"
+                android:paddingTop="@dimen/activity_vertical_margin"
+                android:paddingBottom="@dimen/activity_vertical_margin">
+
+    <TableLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:stretchColumns="1"
+        android:layout_above="@+id/btStart"
+        android:id="@+id/tableLayout">
+
+
+        <TableRow>
+            <TextView
+                android:layout_column="1"
+                android:text="@string/procent_state"
+                android:padding="3dip" />
+            <EditText
+                android:id="@+id/etProcent"
+                android:layout_width="@dimen/width_etext"
+                android:gravity="right"
+                android:hint="10"
+                android:singleLine="true"
+                android:inputType="numberDecimal"
+                android:padding="3dip" />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:layout_column="1"
+                android:text="@string/deposit_state"
+                android:padding="3dip" />
+            <EditText
+                android:id="@+id/etDeposit"
+                android:layout_width="@dimen/width_etext"
+                android:gravity="right"
+                android:hint="0"
+                android:singleLine="true"
+                android:inputType="numberDecimal"
+                android:padding="3dip" />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:layout_column="1"
+                android:text="@string/mounths_add_state"
+                android:padding="3dip" />
+            <EditText
+                android:id="@+id/etMounthAdd"
+                android:layout_width="@dimen/width_etext"
+                android:gravity="right"
+                android:hint="0"
+                android:singleLine="true"
+                android:inputType="numberDecimal"
+                android:padding="3dip" />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:layout_column="1"
+                android:text="@string/year_state"
+                android:padding="3dip" />
+            <EditText
+                android:hint="1"
+                android:singleLine="true"
+                android:id="@+id/etYearState"
+                android:layout_width="@dimen/width_etext"
+                android:gravity="right"
+                android:inputType="number"
+                android:padding="3dip" />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:layout_column="1"
+                android:text="@string/portion_state"
+                android:padding="3dip" />
+            <EditText
+                android:hint="1"
+                android:singleLine="true"
+                android:id="@+id/etPortion"
+                android:layout_width="@dimen/width_etext"
+                android:gravity="right"
+                android:inputType="numberDecimal"
+                android:padding="3dip" />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:layout_column="1"
+                android:text="@string/takeoff_state"
+                android:padding="3dip" />
+            <EditText
+                android:id="@+id/etTakeOff"
+                android:hint="0"
+                android:singleLine="true"
+                android:layout_width="@dimen/width_etext"
+                android:gravity="right"
+                android:padding="3dip" />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:layout_column="1"
+                android:text="@string/takeoff_count_state"
+                android:padding="3dip" />
+            <EditText
+                android:id="@+id/etTakeOffCount"
+                android:hint="0"
+                android:singleLine="true"
+                android:layout_width="@dimen/width_etext"
+                android:gravity="right"
+                android:padding="3dip" />
+        </TableRow>
+    </TableLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/count"
+        android:id="@+id/btStart"
+        android:padding="10dp"
+        android:clickable="true"
+        android:layout_alignParentBottom="true"/>
+
+
+</RelativeLayout>
