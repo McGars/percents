@@ -60,14 +60,16 @@ public class CountFragment extends Fragment {
 
                 float incoming = data_parce.p_deposit * data_parce.p_procents / 100;
 
-                data_parce.p_deposit = data_parce.p_deposit + data_parce.p_mounth_add_cache
-                        + incoming;
+                data_parce.p_deposit = data_parce.p_deposit + incoming;
                 // take off limit
                 if(data_parce.p_take_off_limit !=0 && data_parce.p_take_off_limit_count != 0 &&
-                        data_parce.p_take_off_limit > data_parce.p_deposit
+                        data_parce.p_take_off_limit < incoming
                         ){
                     data_parce.p_deposit -= data_parce.p_take_off_limit_count;
                     tvTakeoff.setText(String.valueOf(data_parce.p_take_off_limit_count/data_parce.p_portion));
+                }else{
+                    data_parce.p_deposit += data_parce.p_mounth_add_cache;
+
                 }
                 tvIncoming.setText(String.format("%.02f", incoming));
 
