@@ -75,28 +75,41 @@ public class CountFragment extends Fragment {
 
                 // разница между прошлым и текущим месяце
                 if(last_incoming != 0)
-                    tvIncomingProcents.setText(formatnumber((int)(incoming-last_incoming)));
+                    tvIncomingProcents.setText(formatnumber((int) (incoming - last_incoming)));
 
                 last_incoming = incoming;
 
                 // увеличение депозита
                 data_parce.p_deposit = data_parce.p_deposit + incoming;
                 // take off limit
-                if(data_parce.p_take_off_limit !=0 && data_parce.p_take_off_limit_count != 0 &&
-                        data_parce.p_take_off_limit < incoming
+                if(data_parce.p_take_off_limit !=0 || data_parce.p_take_off_limit_count != 0
+                        //&& data_parce.p_take_off_limit < incoming
                         ){
                     // снятие прибыли в месяц
                     data_parce.p_deposit -= data_parce.p_take_off_limit_count;
+
+                    int _t_k = (int) (data_parce.p_take_off_limit_count / data_parce.p_portion);
+                    if(_t_k > 0){
+                        tvTakeoff.setTextColor(Color.RED);
+                    } else {
+                        tvTakeoff.setTextColor(Color.GRAY);
+                    }
                     tvTakeoff.setText(formatnumber((int)(data_parce.p_take_off_limit_count/data_parce.p_portion)));
                 }else{
                     // пополнение  в месяц из вне
                     data_parce.p_deposit += data_parce.p_mounth_invite;
                     count_all_invite += data_parce.p_mounth_invite;
                 }
-                tvIncoming.setText(formatnumber((int)incoming));
+
+                if(incoming > 0){
+                    tvIncoming.setTextColor(Color.parseColor("#679B00"));
+                } else {
+                    tvIncoming.setTextColor(Color.RED);
+                }
+                tvIncoming.setText(formatnumber((int) incoming));
                 tvInvite.setText(formatnumber(count_all_invite));
 
-                tvCount.setText(formatnumber((int)data_parce.p_deposit));
+                tvCount.setText(formatnumber((int) data_parce.p_deposit));
                         //String.valueOf(data_parce.p_deposit));
                 calendar.add(Calendar.MONTH, 1);
                 tvYearMonth.setText(sdf.format(calendar.getTime()));
