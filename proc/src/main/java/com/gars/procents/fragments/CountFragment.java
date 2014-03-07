@@ -13,8 +13,10 @@ import android.widget.TextView;
 import com.gars.procents.R;
 import com.gars.procents.parcel.DataParcel;
 
+import java.text.NumberFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Locale;
 
 /**
  * Created by gars on 1/31/14.
@@ -73,7 +75,7 @@ public class CountFragment extends Fragment {
 
                 // разница между прошлым и текущим месяце
                 if(last_incoming != 0)
-                    tvIncomingProcents.setText(String.valueOf((int)(incoming-last_incoming)));
+                    tvIncomingProcents.setText(formatnumber((int)(incoming-last_incoming)));
 
                 last_incoming = incoming;
 
@@ -85,16 +87,16 @@ public class CountFragment extends Fragment {
                         ){
                     // снятие прибыли в месяц
                     data_parce.p_deposit -= data_parce.p_take_off_limit_count;
-                    tvTakeoff.setText(String.valueOf(data_parce.p_take_off_limit_count/data_parce.p_portion));
+                    tvTakeoff.setText(formatnumber((int)(data_parce.p_take_off_limit_count/data_parce.p_portion)));
                 }else{
                     // пополнение  в месяц из вне
                     data_parce.p_deposit += data_parce.p_mounth_invite;
                     count_all_invite += data_parce.p_mounth_invite;
                 }
-                tvIncoming.setText(String.valueOf((int)incoming));
-                tvInvite.setText(String.valueOf(count_all_invite));
+                tvIncoming.setText(formatnumber((int)incoming));
+                tvInvite.setText(formatnumber(count_all_invite));
 
-                tvCount.setText(String.valueOf((int)data_parce.p_deposit));
+                tvCount.setText(formatnumber((int)data_parce.p_deposit));
                         //String.valueOf(data_parce.p_deposit));
                 calendar.add(Calendar.MONTH, 1);
                 tvYearMonth.setText(sdf.format(calendar.getTime()));
@@ -109,5 +111,9 @@ public class CountFragment extends Fragment {
             }
         }
 
+    }
+
+    private String formatnumber(int i){
+        return NumberFormat.getNumberInstance(Locale.US).format(i);
     }
 }
