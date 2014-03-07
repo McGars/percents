@@ -1,6 +1,7 @@
 package com.gars.procents.fragments;
 
 import android.app.Fragment;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.view.LayoutInflater;
@@ -50,6 +51,9 @@ public class CountFragment extends Fragment {
 
         if(data_parce!=null){
             Calendar calendar = Calendar.getInstance();
+            int count_all_invite = 0;
+            float last_incoming = 0;
+
             for (int i = 0; i < data_parce.p_year*12; i++){
                 // procents
                 View row = inflater.inflate(R.layout.item_count, null);
@@ -57,27 +61,51 @@ public class CountFragment extends Fragment {
                 TextView tvTakeoff = (TextView) row.findViewById(R.id.tvTakeoff);
                 TextView tvCount = (TextView) row.findViewById(R.id.tvCount);
                 TextView tvIncoming = (TextView) row.findViewById(R.id.tvIncoming);
+                TextView tvInvite = (TextView) row.findViewById(R.id.tvInvite);
+                TextView tvIncomingProcents = (TextView) row.findViewById(R.id.tvIncomingProcents);
+                TextView tvNumberMounth = (TextView) row.findViewById(R.id.tvNumberMounth);
 
+                // порядковый номер
+                tvNumberMounth.setText(String.valueOf(i+1));
+
+                // проценты
                 float incoming = data_parce.p_deposit * data_parce.p_procents / 100;
 
+                // разница между прошлым и текущим месяце
+                if(last_incoming != 0)
+                    tvIncomingProcents.setText(String.valueOf((int)(incoming-last_incoming)));
+
+                last_incoming = incoming;
+
+                // увеличение депозита
                 data_parce.p_deposit = data_parce.p_deposit + incoming;
                 // take off limit
                 if(data_parce.p_take_off_limit !=0 && data_parce.p_take_off_limit_count != 0 &&
                         data_parce.p_take_off_limit < incoming
                         ){
+                    // снятие прибыли в месяц
                     data_parce.p_deposit -= data_parce.p_take_off_limit_count;
                     tvTakeoff.setText(String.valueOf(data_parce.p_take_off_limit_count/data_parce.p_portion));
                 }else{
-                    data_parce.p_deposit += data_parce.p_mounth_add_cache;
-
+                    // пополнение  в месяц из вне
+                    data_parce.p_deposit += data_parce.p_mounth_invite;
+                    count_all_invite += data_parce.p_mounth_invite;
                 }
-                tvIncoming.setText(String.format("%.02f", incoming));
+                tvIncoming.setText(String.valueOf((int)incoming));
+                tvInvite.setText(String.valueOf(count_all_invite));
 
-                tvCount.setText(String.format("%.02f", data_parce.p_deposit));
+                tvCount.setText(String.valueOf((int)data_parce.p_deposit));
                         //String.valueOf(data_parce.p_deposit));
                 calendar.add(Calendar.MONTH, 1);
                 tvYearMonth.setText(sdf.format(calendar.getTime()));
                 tableLayout.addView(row);
+
+                View line = new View(getActivity());
+                line.setLayoutParams(new ViewGroup.LayoutParams(
+                        ViewGroup.LayoutParams.MATCH_PARENT,
+                        1));
+                line.setBackgroundColor(Color.parseColor("#999999"));
+                tableLayout.addView(line);
             }
         }
 

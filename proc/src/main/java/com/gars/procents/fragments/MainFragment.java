@@ -2,8 +2,6 @@ package com.gars.procents.fragments;
 
 import android.app.Fragment;
 import android.os.Bundle;
-import android.os.Parcelable;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -68,7 +66,7 @@ public class MainFragment extends Fragment {
                 if(!p_deposit.isEmpty())
                     data.p_deposit = Float.valueOf(p_deposit);
                 if(!p_mounth.isEmpty())
-                    data.p_mounth_add_cache = Float.valueOf(p_mounth);
+                    data.p_mounth_invite = Float.valueOf(p_mounth);
                 if(!p_year.isEmpty())
                     data.p_year = Integer.valueOf(p_year);
                 if(!p_portion.isEmpty())

@@ -13,7 +13,7 @@ public class DataParcel implements Parcelable {
     // etProcent, etDeposit,etMounthAdd, etYearState, etPortion, etTakeOff, etTakeOffCount;
     public int   p_procents = 10;
     public float p_deposit = 0;
-    public float p_mounth_add_cache = 0;
+    public float p_mounth_invite = 0;
     public int   p_year = 1;
     public float p_portion = 1;
     public float p_take_off_limit = 0;
@@ -33,7 +33,7 @@ public class DataParcel implements Parcelable {
         Log.d(LOG_TAG, "writeToParcel");
         parcel.writeInt(p_procents);
         parcel.writeFloat(p_deposit);
-        parcel.writeFloat(p_mounth_add_cache);
+        parcel.writeFloat(p_mounth_invite);
         parcel.writeInt(p_year);
         parcel.writeFloat(p_portion);
         parcel.writeFloat(p_take_off_limit);
@@ -57,7 +57,7 @@ public class DataParcel implements Parcelable {
         Log.d(LOG_TAG, "MyObject(Parcel parcel)");
         p_procents = parcel.readInt();
         p_deposit  = parcel.readFloat();
-        p_mounth_add_cache  = parcel.readFloat();
+        p_mounth_invite = parcel.readFloat();
         p_year = parcel.readInt();
         p_portion  = parcel.readFloat();
         p_take_off_limit  = parcel.readFloat();

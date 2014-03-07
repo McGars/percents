@@ -27,11 +27,18 @@
                 android:layout_width="@dimen/width_etext"
                 android:gravity="right"
                 android:hint="10"
+                android:layout_gravity="bottom"
                 android:singleLine="true"
                 android:inputType="numberDecimal"
                 android:padding="3dip"
                 android:layout_height="wrap_content"/>
         </TableRow>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="#999"
+            android:layout_marginTop="5dp"
+            />
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -51,6 +58,12 @@
                 android:padding="3dip"
                 android:layout_height="wrap_content"/>
         </TableRow>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="#999"
+            android:layout_marginTop="5dp"
+            />
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -65,11 +78,18 @@
                 android:layout_width="@dimen/width_etext"
                 android:gravity="right"
                 android:hint="0"
+                android:layout_gravity="bottom"
                 android:singleLine="true"
                 android:inputType="numberDecimal"
                 android:padding="3dip"
                 android:layout_height="wrap_content"/>
         </TableRow>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="#999"
+            android:layout_marginTop="5dp"
+            />
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -89,6 +109,12 @@
                 android:padding="3dip"
                 android:layout_height="wrap_content"/>
         </TableRow>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="#999"
+            android:layout_marginTop="5dp"
+            />
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -106,8 +132,15 @@
                 android:gravity="right"
                 android:inputType="numberDecimal"
                 android:padding="3dip"
+                android:layout_gravity="bottom"
                 android:layout_height="wrap_content"/>
         </TableRow>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="#999"
+            android:layout_marginTop="5dp"
+            />
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -125,8 +158,15 @@
                 android:layout_width="@dimen/width_etext"
                 android:gravity="right"
                 android:padding="3dip"
+                android:layout_gravity="bottom"
                 android:layout_height="wrap_content"/>
         </TableRow>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="#999"
+            android:layout_marginTop="5dp"
+            />
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="wrap_content">

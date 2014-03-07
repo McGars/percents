@@ -8,15 +8,17 @@
     <string name="action_settings">Settings</string>
     <string name="procent_state">Процентная ставка</string>
     <string name="year_state">На сколько лет вклад</string>
-    <string name="portion_state">На сколько делить прибыль в месяц</string>
+    <string name="portion_state">На сколько делить\nприбыль в месяц</string>
     <string name="deposit_state">Первоначальный депозит</string>
-    <string name="mounths_add_state">Ежемесячное пополнение на:</string>
-    <string name="takeoff_state">Снимать прибыль если % >:</string>
+    <string name="mounths_add_state">Ежемесячное\nпополнение на:</string>
+    <string name="takeoff_state">Снимать прибыль\nесли % >:</string>
     <string name="takeoff_count_state">Сколько снимать</string>
     <string name="count">Посчитать</string>
     <string name="tvDate">Дата</string>
     <string name="incomming">Прибыль</string>
+    <string name="done">Итог</string>
     <string name="takeoff">Снятие</string>
+    <string name="invite">Вклад</string>
     <string name="procents">Проценты</string>
 
 </resources>
