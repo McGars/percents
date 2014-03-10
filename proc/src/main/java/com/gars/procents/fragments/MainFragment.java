@@ -15,8 +15,10 @@ import com.gars.procents.parcel.DataParcel;
  */
 public class MainFragment extends Fragment {
 
-    private EditText etProcent, etDeposit,etMounthAdd, etYearState, etPortion, etTakeOff, etTakeOffCount;
+    private EditText etProcent, etDeposit,etMounthAdd, etYearState, etPortion, etTakeOffStartMonth, etTakeOffHowMach;
     private View btStart;
+    private EditText etTakeOffEndMonth;
+    private EditText etMounthAddBreak;
 
     public static MainFragment newInstance() {
         MainFragment fragment = new MainFragment();
@@ -39,9 +41,11 @@ public class MainFragment extends Fragment {
         etDeposit = (EditText) getView().findViewById(R.id.etDeposit);
         etYearState = (EditText) getView().findViewById(R.id.etYearState);
         etMounthAdd = (EditText) getView().findViewById(R.id.etMounthAdd);
+        etMounthAddBreak = (EditText) getView().findViewById(R.id.etMounthAddBreak);
         etPortion = (EditText) getView().findViewById(R.id.etPortion);
-        etTakeOff = (EditText) getView().findViewById(R.id.etTakeOff);
-        etTakeOffCount = (EditText) getView().findViewById(R.id.etTakeOffCount);
+        etTakeOffStartMonth = (EditText) getView().findViewById(R.id.etTakeOff);
+        etTakeOffEndMonth = (EditText) getView().findViewById(R.id.etTakeOffEndMonth);
+        etTakeOffHowMach = (EditText) getView().findViewById(R.id.etTakeOffCount);
         btStart = getView().findViewById(R.id.btStart);
         btStart.setOnClickListener(click_button);
     }
@@ -56,10 +60,12 @@ public class MainFragment extends Fragment {
                 String p_procents = etProcent.getText().toString();
                 String p_deposit  = etDeposit.getText().toString();
                 String p_mounth   = etMounthAdd.getText().toString();
+                String p_mounth_break   = etMounthAddBreak.getText().toString();
                 String p_year   = etYearState.getText().toString();
                 String p_portion  = etPortion.getText().toString();
-                String p_take_off = etTakeOff.getText().toString();
-                String p_take_off_count = etTakeOffCount.getText().toString();
+                String start_take_off_month = etTakeOffStartMonth.getText().toString();
+                String end_take_off_month = etTakeOffEndMonth.getText().toString();
+                String p_take_off_count = etTakeOffHowMach.getText().toString();
 
                 if(!p_procents.isEmpty())
                     data.p_procents = Integer.valueOf(p_procents);
@@ -71,10 +77,14 @@ public class MainFragment extends Fragment {
                     data.p_year = Integer.valueOf(p_year);
                 if(!p_portion.isEmpty())
                     data.p_portion = Float.valueOf(p_portion);
-                if(!p_take_off.isEmpty())
-                    data.p_take_off_limit = Float.valueOf(p_take_off);
+                if(!start_take_off_month.isEmpty())
+                    data.p_number_month_take_off = Float.valueOf(start_take_off_month);
+                if(!end_take_off_month.isEmpty())
+                    data.p_number_month_break_take_off = Float.valueOf(end_take_off_month);
                 if(!p_take_off_count.isEmpty())
-                    data.p_take_off_limit_count = Float.valueOf(p_take_off_count);
+                    data.p_take_off_how_mach = Float.valueOf(p_take_off_count);
+                if(!p_mounth_break.isEmpty())
+                    data.p_mounth_break = Float.valueOf(p_mounth_break);
 
 
                 getActivity().getFragmentManager().beginTransaction()

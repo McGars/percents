@@ -11,7 +11,7 @@
     <string name="portion_state">На сколько делить\nприбыль в месяц</string>
     <string name="deposit_state">Первоначальный депозит</string>
     <string name="mounths_add_state">Ежемесячное\nпополнение на:</string>
-    <string name="takeoff_state">Снимать прибыль\nесли % >:</string>
+    <string name="takeoff_state">С какого месяца\nснимать</string>
     <string name="takeoff_count_state">Сколько снимать</string>
     <string name="count">Посчитать</string>
     <string name="tvDate">Дата</string>
@@ -20,5 +20,7 @@
     <string name="takeoff">Снятие</string>
     <string name="invite">Добавление</string>
     <string name="procents">Проценты</string>
+    <string name="end_take_off">Месяц прекращения\nснятия</string>
+    <string name="mounths_add_state_break">В каком месяце\nне пополнять</string>
 
 </resources>

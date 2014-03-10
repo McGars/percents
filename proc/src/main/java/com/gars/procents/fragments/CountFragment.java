@@ -82,23 +82,30 @@ public class CountFragment extends Fragment {
                 // увеличение депозита
                 data_parce.p_deposit = data_parce.p_deposit + incoming;
                 // take off limit
-                if(data_parce.p_take_off_limit !=0 || data_parce.p_take_off_limit_count != 0
-                        //&& data_parce.p_take_off_limit < incoming
+                // 10 < 0+2, 10 < 1+2,
+
+                if(data_parce.p_number_month_take_off < i+2 &&
+                        (data_parce.p_number_month_break_take_off == 0 || data_parce.p_number_month_break_take_off >= i+2) &&
+                        data_parce.p_take_off_how_mach != 0
+                        //&& data_parce.p_number_month_take_off < incoming
                         ){
                     // снятие прибыли в месяц
-                    data_parce.p_deposit -= data_parce.p_take_off_limit_count;
+                    data_parce.p_deposit -= data_parce.p_take_off_how_mach;
 
-                    int _t_k = (int) (data_parce.p_take_off_limit_count / data_parce.p_portion);
+                    int _t_k = (int) (data_parce.p_take_off_how_mach / data_parce.p_portion);
                     if(_t_k > 0){
                         tvTakeoff.setTextColor(Color.RED);
                     } else {
                         tvTakeoff.setTextColor(Color.GRAY);
                     }
-                    tvTakeoff.setText(formatnumber((int)(data_parce.p_take_off_limit_count/data_parce.p_portion)));
-                }else{
+                    tvTakeoff.setText(formatnumber((int)(data_parce.p_take_off_how_mach /data_parce.p_portion)));
+                }
+                if(data_parce.p_mounth_break == 0 || data_parce.p_mounth_break >= (i+2)){
                     // пополнение  в месяц из вне
                     data_parce.p_deposit += data_parce.p_mounth_invite;
                     count_all_invite += data_parce.p_mounth_invite;
+                } else {
+                    count_all_invite = 0;
                 }
 
                 if(incoming > 0){

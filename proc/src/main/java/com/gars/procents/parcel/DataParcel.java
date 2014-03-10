@@ -16,8 +16,10 @@ public class DataParcel implements Parcelable {
     public float p_mounth_invite = 0;
     public int   p_year = 1;
     public float p_portion = 1;
-    public float p_take_off_limit = 0;
-    public float p_take_off_limit_count = 0;
+    public float p_number_month_take_off = 0;
+    public float p_number_month_break_take_off = 0;
+    public float p_take_off_how_mach = 0;
+    public float p_mounth_break;
 
     // обычный конструктор
     public DataParcel() {
@@ -34,10 +36,12 @@ public class DataParcel implements Parcelable {
         parcel.writeInt(p_procents);
         parcel.writeFloat(p_deposit);
         parcel.writeFloat(p_mounth_invite);
+        parcel.writeFloat(p_mounth_break);
         parcel.writeInt(p_year);
         parcel.writeFloat(p_portion);
-        parcel.writeFloat(p_take_off_limit);
-        parcel.writeFloat(p_take_off_limit_count);
+        parcel.writeFloat(p_number_month_take_off);
+        parcel.writeFloat(p_number_month_break_take_off);
+        parcel.writeFloat(p_take_off_how_mach);
     }
 
     public static final Parcelable.Creator<DataParcel> CREATOR = new Parcelable.Creator<DataParcel>() {
@@ -58,10 +62,12 @@ public class DataParcel implements Parcelable {
         p_procents = parcel.readInt();
         p_deposit  = parcel.readFloat();
         p_mounth_invite = parcel.readFloat();
+        p_mounth_break = parcel.readFloat();
         p_year = parcel.readInt();
         p_portion  = parcel.readFloat();
-        p_take_off_limit  = parcel.readFloat();
-        p_take_off_limit_count  = parcel.readFloat();
+        p_number_month_take_off = parcel.readFloat();
+        p_number_month_break_take_off = parcel.readFloat();
+        p_take_off_how_mach = parcel.readFloat();
     }
 
 }
