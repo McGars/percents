@@ -1,4 +1,4 @@
-package com.gars.procents.fragments;
+package com.gars.percents.fragments;
 
 import android.app.Fragment;
 import android.graphics.Color;
@@ -10,8 +10,8 @@ import android.view.ViewGroup;
 import android.widget.TableLayout;
 import android.widget.TextView;
 
-import com.gars.procents.R;
-import com.gars.procents.parcel.DataParcel;
+import com.gars.percents.R;
+import com.gars.percents.parcel.DataParcel;
 
 import java.text.NumberFormat;
 import java.text.SimpleDateFormat;
@@ -27,11 +27,13 @@ public class CountFragment extends Fragment {
     private TableLayout tableLayout;
     private LayoutInflater inflater;
     private SimpleDateFormat sdf;
+    private static String DATA = "data";
 
     public static CountFragment newInstance(Parcelable data) {
         CountFragment fragment = new CountFragment();
         Bundle args = new Bundle();
-        args.putParcelable("data", data);
+        // добавляем данные
+        args.putParcelable(DATA, data);
         fragment.setArguments(args);
         return fragment;
     }
@@ -40,9 +42,11 @@ public class CountFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         this.inflater = inflater;
         View v = inflater.inflate(R.layout.fragment_count_page, null);
+        // инициализация таблицы данных
         tableLayout = (TableLayout)v.findViewById(R.id.tableLayout);
-
-        data_parce = getArguments().getParcelable("data");
+        // вынимаем данные
+        data_parce = getArguments().getParcelable(DATA);
+        // формат даты месяцев
         sdf = new SimpleDateFormat("yyyy.MM");
         return v;
     }
@@ -57,8 +61,9 @@ public class CountFragment extends Fragment {
             float last_incoming = 0;
 
             for (int i = 0; i < data_parce.p_year*12; i++){
-                // procents
+                // строка UI для заполнения данных
                 View row = inflater.inflate(R.layout.item_count, null);
+                // поля
                 TextView tvYearMonth = (TextView) row.findViewById(R.id.tvYearMonth);
                 TextView tvTakeoff = (TextView) row.findViewById(R.id.tvTakeoff);
                 TextView tvCount = (TextView) row.findViewById(R.id.tvCount);
@@ -70,70 +75,80 @@ public class CountFragment extends Fragment {
                 // порядковый номер
                 tvNumberMounth.setText(String.valueOf(i+1));
 
-                // проценты
+                // проценты в каждом месяце
                 float incoming = data_parce.p_deposit * data_parce.p_procents / 100;
 
-                // разница между прошлым и текущим месяце
+                // разница между прошлым и текущим месяцем
                 if(last_incoming != 0)
                     tvIncomingProcents.setText(formatnumber((int) (incoming - last_incoming)));
 
                 last_incoming = incoming;
 
-                // увеличение депозита
+                // увеличение депозита на проценты
                 data_parce.p_deposit = data_parce.p_deposit + incoming;
-                // take off limit
-                // 10 < 0+2, 10 < 1+2,
 
+                // определяем необходимо ли снимать с депозита
                 if(data_parce.p_number_month_take_off < i+2 &&
-                        (data_parce.p_number_month_break_take_off == 0 || data_parce.p_number_month_break_take_off >= i+2) &&
+                        (data_parce.p_number_month_break_take_off == 0
+                        || data_parce.p_number_month_break_take_off >= i+2) &&
                         data_parce.p_take_off_how_mach != 0
-                        //&& data_parce.p_number_month_take_off < incoming
                         ){
                     // снятие прибыли в месяц
                     data_parce.p_deposit -= data_parce.p_take_off_how_mach;
 
+                    // подкрашиваем снятие в UI
                     int _t_k = (int) (data_parce.p_take_off_how_mach / data_parce.p_portion);
                     if(_t_k > 0){
                         tvTakeoff.setTextColor(Color.RED);
                     } else {
                         tvTakeoff.setTextColor(Color.GRAY);
                     }
+                    // выводим в UI
                     tvTakeoff.setText(formatnumber((int)(data_parce.p_take_off_how_mach /data_parce.p_portion)));
                 }
                 if(data_parce.p_mounth_break == 0 || data_parce.p_mounth_break >= (i+2)){
-                    // пополнение  в месяц из вне
+                    // пополнение депозита в месяц
                     data_parce.p_deposit += data_parce.p_mounth_invite;
                     count_all_invite += data_parce.p_mounth_invite;
                 } else {
                     count_all_invite = 0;
                 }
 
+                // подкрашиваем прибыль
                 if(incoming > 0){
                     tvIncoming.setTextColor(Color.parseColor("#679B00"));
                 } else {
                     tvIncoming.setTextColor(Color.RED);
                 }
+                // выводим прибыль
                 tvIncoming.setText(formatnumber((int) incoming));
+                // выводим общее количество вложений
                 tvInvite.setText(formatnumber(count_all_invite));
-
+                // выводим итог на депозите
                 tvCount.setText(formatnumber((int) data_parce.p_deposit));
-                        //String.valueOf(data_parce.p_deposit));
+                // дата
                 calendar.add(Calendar.MONTH, 1);
                 tvYearMonth.setText(sdf.format(calendar.getTime()));
+                // добавляем строку
                 tableLayout.addView(row);
-
-                View line = new View(getActivity());
-                line.setLayoutParams(new ViewGroup.LayoutParams(
-                        ViewGroup.LayoutParams.MATCH_PARENT,
-                        1));
-                line.setBackgroundColor(Color.parseColor("#999999"));
-                tableLayout.addView(line);
+                // добавляем линию
+                addTableLine();
             }
         }
 
     }
 
+    // формат цыфр
     private String formatnumber(int i){
         return NumberFormat.getNumberInstance(Locale.US).format(i);
+    }
+
+    private void addTableLine(){
+        View line = new View(getActivity());
+        line.setLayoutParams(new ViewGroup.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT,
+                1));
+        line.setBackgroundColor(Color.parseColor("#999999"));
+        tableLayout.addView(line);
     }
 }

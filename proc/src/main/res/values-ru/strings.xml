@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Проценты, калькулятор</string>
+    <string name="percent_state">Процентная ставка</string>
+    <string name="year_state">На сколько лет вклад</string>
+    <string name="portion_state">Количество вкладчиков</string>
+    <string name="deposit_state">Первоначальный депозит</string>
+    <string name="months_add_state">Ежемесячное\nпополнение на:</string>
+    <string name="takeoff_state">С какого месяца\nснимать</string>
+    <string name="takeoff_count_state">Сколько снимать</string>
+    <string name="count">Посчитать</string>
+    <string name="tvDate">Дата</string>
+    <string name="incomming">Прибыль</string>
+    <string name="done">Итог</string>
+    <string name="takeoff">Снятие</string>
+    <string name="invite">Добавление</string>
+    <string name="prc_in">Проценты</string>
+    <string name="endtakeoff">Месяц прекращения\nснятия</string>
+    <string name="months_add_state_break">В каком месяце\nне пополнять</string>
+
+</resources>

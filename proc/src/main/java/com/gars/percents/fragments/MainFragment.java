@@ -1,4 +1,4 @@
-package com.gars.procents.fragments;
+package com.gars.percents.fragments;
 
 import android.app.Fragment;
 import android.os.Bundle;
@@ -7,8 +7,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 
-import com.gars.procents.R;
-import com.gars.procents.parcel.DataParcel;
+import com.gars.percents.R;
+import com.gars.percents.parcel.DataParcel;
 
 /**
  * Created by gars on 1/31/14.
@@ -20,14 +20,22 @@ public class MainFragment extends Fragment {
     private EditText etTakeOffEndMonth;
     private EditText etMounthAddBreak;
 
+    /**
+     * Инициализация фрагмента
+     * @return
+     */
     public static MainFragment newInstance() {
         MainFragment fragment = new MainFragment();
-//        Bundle args = new Bundle();
-//        args.putParcelable("data", data);
-//        fragment.setArguments(args);
         return fragment;
     }
 
+    /**
+     * Вьюшка
+     * @param inflater
+     * @param container
+     * @param savedInstanceState
+     * @return
+     */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_main, null);
@@ -37,15 +45,25 @@ public class MainFragment extends Fragment {
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+        // количество процентов в месяц
         etProcent = (EditText) getView().findViewById(R.id.etProcent);
+        // начальный депозит
         etDeposit = (EditText) getView().findViewById(R.id.etDeposit);
+        // ежемемячный вклад (пополнение)
         etYearState = (EditText) getView().findViewById(R.id.etYearState);
+        // с какого месяца идет пополнение
         etMounthAdd = (EditText) getView().findViewById(R.id.etMounthAdd);
+        // в каком месяце пополнение прекращаеться
         etMounthAddBreak = (EditText) getView().findViewById(R.id.etMounthAddBreak);
+        // количество вкладчиков, чем больше вкладчиков, тем меньше прибыль у каждого
         etPortion = (EditText) getView().findViewById(R.id.etPortion);
+        // с какого месяца начнеться снятие прибыли
         etTakeOffStartMonth = (EditText) getView().findViewById(R.id.etTakeOff);
+        // в каком месяце прекратить снятие
         etTakeOffEndMonth = (EditText) getView().findViewById(R.id.etTakeOffEndMonth);
+        // сколько снимать со счета
         etTakeOffHowMach = (EditText) getView().findViewById(R.id.etTakeOffCount);
+        // кнопка запуска
         btStart = getView().findViewById(R.id.btStart);
         btStart.setOnClickListener(click_button);
     }
@@ -56,7 +74,7 @@ public class MainFragment extends Fragment {
         @Override
         public void onClick(View view) {
             if(view.getId() == R.id.btStart){
-                DataParcel data = new DataParcel();
+                // собираем данные с полей ввода
                 String p_procents = etProcent.getText().toString();
                 String p_deposit  = etDeposit.getText().toString();
                 String p_mounth   = etMounthAdd.getText().toString();
@@ -67,6 +85,8 @@ public class MainFragment extends Fragment {
                 String end_take_off_month = etTakeOffEndMonth.getText().toString();
                 String p_take_off_count = etTakeOffHowMach.getText().toString();
 
+                // проверка данных и занесение в объект для передачи
+                DataParcel data = new DataParcel();
                 if(!p_procents.isEmpty())
                     data.p_procents = Integer.valueOf(p_procents);
                 if(!p_deposit.isEmpty())
@@ -86,7 +106,7 @@ public class MainFragment extends Fragment {
                 if(!p_mounth_break.isEmpty())
                     data.p_mounth_break = Float.valueOf(p_mounth_break);
 
-
+                // фрагмент калькулятор
                 getActivity().getFragmentManager().beginTransaction()
                         .addToBackStack(null)
                         .replace(R.id.container, CountFragment.newInstance(data))

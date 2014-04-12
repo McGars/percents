@@ -1,4 +1,4 @@
-package com.gars.procents.parcel;
+package com.gars.percents.parcel;
 
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -10,15 +10,41 @@ import android.util.Log;
 public class DataParcel implements Parcelable {
 
     final static String LOG_TAG = "myLogs";
-    // etProcent, etDeposit,etMounthAdd, etYearState, etPortion, etTakeOff, etTakeOffCount;
+    /**
+     * проценты
+     */
     public int   p_procents = 10;
+    /**
+     * начальный депозит
+     */
     public float p_deposit = 0;
+    /**
+     * ежемесячное пополнение
+     */
     public float p_mounth_invite = 0;
+    /**
+     * на сколько лет депозит
+     */
     public int   p_year = 1;
+    /**
+     * количество вкладчиков
+     */
     public float p_portion = 1;
+    /**
+     * с какого месяца снимать
+     */
     public float p_number_month_take_off = 0;
+    /**
+     * с какого месяца прекратить снимать с депозита
+     */
     public float p_number_month_break_take_off = 0;
+    /**
+     * сколько снимть
+     */
     public float p_take_off_how_mach = 0;
+    /**
+     * в каком месяце прекратить пополнение депозита
+     */
     public float p_mounth_break;
 
     // обычный конструктор
@@ -26,6 +52,7 @@ public class DataParcel implements Parcelable {
         Log.d(LOG_TAG, "MyObject(String _s, int _i)");
     }
 
+    @Override
     public int describeContents() {
         return 0;
     }

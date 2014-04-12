@@ -1,26 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Procents</string>
-    <string name="title_section1">Section 1</string>
-    <string name="title_section2">Section 2</string>
-    <string name="title_section3">Section 3</string>
-    <string name="action_settings">Settings</string>
-    <string name="procent_state">Процентная ставка</string>
-    <string name="year_state">На сколько лет вклад</string>
-    <string name="portion_state">На сколько делить\nприбыль в месяц</string>
-    <string name="deposit_state">Первоначальный депозит</string>
-    <string name="mounths_add_state">Ежемесячное\nпополнение на:</string>
-    <string name="takeoff_state">С какого месяца\nснимать</string>
-    <string name="takeoff_count_state">Сколько снимать</string>
-    <string name="count">Посчитать</string>
-    <string name="tvDate">Дата</string>
-    <string name="incomming">Прибыль</string>
-    <string name="done">Итог</string>
-    <string name="takeoff">Снятие</string>
-    <string name="invite">Добавление</string>
-    <string name="procents">Проценты</string>
-    <string name="end_take_off">Месяц прекращения\nснятия</string>
-    <string name="mounths_add_state_break">В каком месяце\nне пополнять</string>
+    <string name="app_name">Percent calculator</string>
+    <string name="percent_state">Percent rate</string>
+    <string name="year_state">Years contribution</string>
+    <string name="portion_state">Number of depositors</string>
+    <string name="deposit_state">The initial deposit</string>
+    <string name="months_add_state">Monthly\nrefill on:</string>
+    <string name="takeoff_state">monthly withdrawal</string>
+    <string name="takeoff_count_state">How remove</string>
+    <string name="count">Go</string>
+    <string name="tvDate">Date</string>
+    <string name="incomming">Profit</string>
+    <string name="done">Total</string>
+    <string name="takeoff">Removal</string>
+    <string name="invite">Month add</string>
+    <string name="prc_in">Percents</string>
+    <string name="endtakeoff">Month stop removal</string>
+    <string name="months_add_state_break">Month cancel add</string>
+
 
 </resources>
