@@ -18,6 +18,6 @@
     <string name="prc_in">Percents</string>
     <string name="endtakeoff">Month stop removal</string>
     <string name="months_add_state_break">Month cancel add</string>
-
+    <string name="details">Details</string>
 
 </resources>
