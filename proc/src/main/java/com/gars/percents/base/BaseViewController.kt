@@ -39,8 +39,7 @@ abstract class BaseViewController(args: Bundle? = null) : Controller(args) {
         }
 
         // set title
-        getTitle()?.run { activity?.title = this }
-                ?: getTitleInt().run { if (this != 0) activity?.setTitle(this) }
+        getTitle()?.let { activity?.title = it } ?: getTitleInt().let { if (it != 0) activity?.setTitle(it) }
     }
 
     protected open fun getTitle(): String? = null

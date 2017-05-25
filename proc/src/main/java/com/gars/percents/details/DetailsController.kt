@@ -21,8 +21,8 @@ import java.util.*
  */
 class DetailsController(bundle: Bundle) : BaseViewController(bundle) {
 
-    val state : State by lazy { args.getSerializable(Constants.STATE) as State }
-    val sdf = SimpleDateFormat("yyyy.MM")
+    private val state : State by lazy { args.getSerializable(Constants.STATE) as State }
+    private val sdf = SimpleDateFormat("yyyy.MM")
     private var tableLayout: ViewGroup? = null
 
     override fun getTitleInt() = R.string.details
@@ -56,14 +56,14 @@ class DetailsController(bundle: Bundle) : BaseViewController(bundle) {
 
         var count_all_invite = 0
         var last_incoming = 0f
-        var inflater = LayoutInflater.from(applicationContext)
-        for (i in 0 .. state.yearState * 12) {
+        val inflater = LayoutInflater.from(applicationContext)
+        for (i in 1 .. state.yearState * 12) {
             // строка UI для заполнения данных
             val row = inflater.inflate(R.layout.item_count, tableLayout, false)
             // поля
             with(row) {
                 // порядковый номер
-                row.tvNumberMounth.text = (i + 1).toString()
+                row.tvNumberMounth.text = (i).toString()
 
                 // проценты в каждом месяце
                 val incoming = state.deposit * state.procents / 100
@@ -123,14 +123,11 @@ class DetailsController(bundle: Bundle) : BaseViewController(bundle) {
     }
 
     // формат цыфр
-    private fun formatnumber(i: Int): String {
-        return NumberFormat.getNumberInstance(Locale.US).format(i.toLong())
-    }
+    private fun formatnumber(i: Int) =  NumberFormat.getNumberInstance(Locale.US).format(i.toLong())
 
     private fun addTableLine() {
         tableLayout?.addView(View(activity).apply {
-            layoutParams = ViewGroup.LayoutParams(
-                    ViewGroup.LayoutParams.MATCH_PARENT, 1)
+            layoutParams = ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 1)
             setBackgroundColor(Color.GRAY)
         })
     }

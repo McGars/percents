@@ -47,8 +47,8 @@ class HomeController : BaseViewController(), View.OnClickListener, HomeView {
     }
 
     override fun onClick(v: View) {
-        if (v.id == R.id.btStart) {
-            presenter.buildData(inputs)
+        when(v.id) {
+            R.id.btStart -> presenter.buildData(inputs)
         }
     }
 

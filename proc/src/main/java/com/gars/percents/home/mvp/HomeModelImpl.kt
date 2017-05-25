@@ -15,7 +15,7 @@ class HomeModelImpl : HomeModel {
         val state = State()
         inputs?.forEach {
             when(it.id) {
-                R.id.etProcent -> state.procents = it.toInt(state.procents)
+                R.id.etProcent -> state.procents = it.toFloat(state.procents)
                 R.id.etDeposit -> state.deposit = it.toFloat(state.deposit)
                 R.id.etMounthAdd -> state.mounthAdd = it.toInt(state.mounthAdd)
                 R.id.etMounthAddBreak -> state.mounthAddBreak = it.toInt(state.mounthAddBreak)
