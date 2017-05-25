@@ -19,5 +19,6 @@
     <string name="endtakeoff">Month stop removal</string>
     <string name="months_add_state_break">Month cancel add</string>
     <string name="details">Details</string>
+    <string name="persendInMonth">%.2f%% in month</string>
 
 </resources>

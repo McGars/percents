@@ -1,50 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <TableRow xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:background="@android:color/background_dark">
 
 
     <TextView
         android:id="@+id/tvNumberMounth"
+        style="@style/TextAppearance.AppCompat.Small.Inverse"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        style="@style/TextAppearance.AppCompat.Small.Inverse"
         android:padding="5dp"
         android:text="1" />
 
     <TextView
         android:id="@+id/tvYearMonth"
+        style="@style/TextAppearance.AppCompat.Small.Inverse"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        style="@style/TextAppearance.AppCompat.Small.Inverse"
         android:padding="5dp"
         android:text="2013.01" />
 
     <LinearLayout
+        style="@style/TextAppearance.AppCompat.Small.Inverse"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_column="2"
-        style="@style/TextAppearance.AppCompat.Small.Inverse"
         android:orientation="vertical">
 
         <TextView
             android:id="@+id/tvTakeoff"
+            style="@style/TextAppearance.AppCompat.Small.Inverse"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingLeft="5dp"
             android:paddingRight="5dp"
-            style="@style/TextAppearance.AppCompat.Small.Inverse"
             android:paddingTop="5dp"
             android:text="0" />
 
         <TextView
             android:id="@+id/tvInvite"
+            style="@style/TextAppearance.AppCompat.Small.Inverse"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingLeft="5dp"
             android:text="@string/invite"
-            style="@style/TextAppearance.AppCompat.Small.Inverse"
             android:textColor="#666"
             android:textSize="12sp" />
 
@@ -57,32 +59,32 @@
 
         <TextView
             android:id="@+id/tvIncoming"
+            style="@style/TextAppearance.AppCompat.Small.Inverse"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingLeft="5dp"
             android:paddingRight="5dp"
             android:paddingTop="5dp"
-            style="@style/TextAppearance.AppCompat.Small.Inverse"
             android:text="@string/prc_in" />
 
         <TextView
             android:id="@+id/tvIncomingProcents"
+            style="@style/TextAppearance.AppCompat.Small.Inverse"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingLeft="5dp"
-            android:text="0"
-            style="@style/TextAppearance.AppCompat.Small.Inverse"
             android:textColor="#666"
-            android:textSize="12sp" />
+            android:textSize="12sp"
+            tools:text="0" />
     </LinearLayout>
 
     <TextView
         android:id="@+id/tvCount"
+        style="@style/TextAppearance.AppCompat.Small.Inverse"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="right"
         android:padding="5dp"
-        style="@style/TextAppearance.AppCompat.Small.Inverse"
-        android:text="105.05" />
+        tools:text="105.05" />
 
 </TableRow>

@@ -15,10 +15,10 @@ class HomeModelImpl : HomeModel {
         val state = State()
         inputs?.forEach {
             when(it.id) {
-                R.id.etProcent -> state.procents = it.toFloat(state.procents)
+                R.id.etProcent -> state.percent = it.toFloat(state.percent)
                 R.id.etDeposit -> state.deposit = it.toFloat(state.deposit)
-                R.id.etMounthAdd -> state.mounthAdd = it.toInt(state.mounthAdd)
-                R.id.etMounthAddBreak -> state.mounthAddBreak = it.toInt(state.mounthAddBreak)
+                R.id.etMounthAdd -> state.monthAdd = it.toInt(state.monthAdd)
+                R.id.etMounthAddBreak -> state.monthAddBreak = it.toInt(state.monthAddBreak)
                 R.id.etYearState -> state.yearState = it.toInt(state.yearState)
                 R.id.etPortion -> state.portion = it.toInt(state.portion)
                 R.id.etTakeOff -> state.takeOff = it.toFloat(state.takeOff)

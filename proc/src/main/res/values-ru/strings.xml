@@ -19,5 +19,6 @@
     <string name="endtakeoff">Месяц прекращения\nснятия</string>
     <string name="months_add_state_break">В каком месяце\nне пополнять</string>
     <string name="details">Детали</string>
+    <string name="persendInMonth" formatted="false">%.2f%% в месяц</string>
 
 </resources>

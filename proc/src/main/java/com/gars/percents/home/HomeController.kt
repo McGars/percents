@@ -3,9 +3,7 @@ package com.gars.percents.home
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import android.widget.EditText
 import com.bluelinelabs.conductor.RouterTransaction
 import com.bluelinelabs.conductor.changehandler.FadeChangeHandler
@@ -23,17 +21,20 @@ import kotlin.properties.Delegates
 /**
  * Created by gars on 29.12.2016.
  */
-class HomeController : BaseViewController(), View.OnClickListener, HomeView {
+class HomeController : BaseViewController(), HomeView {
 
     private var presenter: HomePresenter by Delegates.notNull()
     private var inputs: Array<EditText>? = null
+
+    init {
+        setHasOptionsMenu(true)
+    }
 
     override fun inflateView(inflater: LayoutInflater, container: ViewGroup)
         = inflater.inflate(R.layout.view_home, container, false)
 
 
     override fun onViewBound(view: View) {
-        view.btStart.setOnClickListener(this)
         inputs = with(view) {
            arrayOf(etProcent, etDeposit, etMounthAdd, etMounthAddBreak, etYearState,
                     etPortion, etTakeOff, etTakeOffEndMonth, etTakeOffCount)
@@ -46,12 +47,6 @@ class HomeController : BaseViewController(), View.OnClickListener, HomeView {
         (activity as AppCompatActivity).supportActionBar?.setDisplayHomeAsUpEnabled(false)
     }
 
-    override fun onClick(v: View) {
-        when(v.id) {
-            R.id.btStart -> presenter.buildData(inputs)
-        }
-    }
-
     override fun onDestroyView(view: View) {
         super.onDestroyView(view)
         Log.d("onDestroyView", "HomeController")
@@ -60,6 +55,18 @@ class HomeController : BaseViewController(), View.OnClickListener, HomeView {
     override fun onDestroy() {
         super.onDestroy()
         Log.d("onDestroy", "HomeController")
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        inflater.inflate(R.menu.main_menu, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when(item.itemId) {
+            R.id.actionSend  -> { presenter.buildData(inputs); true }
+            else -> super.onOptionsItemSelected(item)
+        }
     }
 
     /**

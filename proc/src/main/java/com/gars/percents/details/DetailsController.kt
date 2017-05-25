@@ -2,11 +2,13 @@ package com.gars.percents.details
 
 import android.graphics.Color
 import android.os.Bundle
+import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import com.gars.percents.R
 import com.gars.percents.base.BaseViewController
 import com.gars.percents.home.State
@@ -24,6 +26,7 @@ class DetailsController(bundle: Bundle) : BaseViewController(bundle) {
     private val state : State by lazy { args.getSerializable(Constants.STATE) as State }
     private val sdf = SimpleDateFormat("yyyy.MM")
     private var tableLayout: ViewGroup? = null
+    private var tvMonthPercent: TextView? = null
 
     override fun getTitleInt() = R.string.details
 
@@ -32,7 +35,8 @@ class DetailsController(bundle: Bundle) : BaseViewController(bundle) {
 
 
     override fun onViewBound(view: View) {
-        tableLayout = view.findViewById(R.id.tableLayout) as ViewGroup?
+        tableLayout = view.findViewById(R.id.tableLayout) as? ViewGroup
+        tvMonthPercent = view.findViewById(R.id.tvMonthPercent) as? TextView
         buildViews()
     }
 
@@ -54,6 +58,11 @@ class DetailsController(bundle: Bundle) : BaseViewController(bundle) {
     private fun buildViews() {
         val calendar = Calendar.getInstance()
 
+        val greenColor = ContextCompat.getColor(activity, android.R.color.holo_green_dark)
+
+        // вычисляем ежемесяцный процент
+        val monthPercent = state.percent / 12f
+        tvMonthPercent?.text = activity?.getString(R.string.persendInMonth, monthPercent)
         var count_all_invite = 0
         var last_incoming = 0f
         val inflater = LayoutInflater.from(applicationContext)
@@ -66,7 +75,7 @@ class DetailsController(bundle: Bundle) : BaseViewController(bundle) {
                 row.tvNumberMounth.text = (i).toString()
 
                 // проценты в каждом месяце
-                val incoming = state.deposit * state.procents / 100
+                val incoming = state.deposit * monthPercent / 100
 
                 // разница между прошлым и текущим месяцем
                 if (last_incoming != 0f)
@@ -93,16 +102,16 @@ class DetailsController(bundle: Bundle) : BaseViewController(bundle) {
                     // выводим в UI
                     tvTakeoff.text = formatnumber((state.takeOffCount / state.portion).toInt())
                 }
-                if (state.mounthAddBreak == 0 || state.mounthAddBreak >= i + 2) {
+                if (state.monthAddBreak == 0 || state.monthAddBreak >= i + 2) {
                     // пополнение депозита в месяц
-                    state.deposit += state.mounthAdd
-                    count_all_invite += state.mounthAdd
+                    state.deposit += state.monthAdd
+                    count_all_invite += state.monthAdd
                 } else {
                     count_all_invite = 0
                 }
 
                 // подкрашиваем прибыль
-                tvIncoming.setTextColor(if (incoming > 0) Color.GREEN else Color.DKGRAY)
+                tvIncoming.setTextColor(if (incoming > 0) greenColor else Color.DKGRAY)
 
                 // выводим прибыль
                 tvIncoming.text = formatnumber(incoming.toInt())
