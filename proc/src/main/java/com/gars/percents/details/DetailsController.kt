@@ -35,24 +35,14 @@ class DetailsController(bundle: Bundle) : BaseViewController(bundle) {
 
 
     override fun onViewBound(view: View) {
-        tableLayout = view.findViewById(R.id.tableLayout) as? ViewGroup
-        tvMonthPercent = view.findViewById(R.id.tvMonthPercent) as? TextView
+        tableLayout = view.findViewById(R.id.tableLayout)
+        tvMonthPercent = view.findViewById(R.id.tvMonthPercent)
         buildViews()
     }
 
     override fun onAttach(view: View) {
         super.onAttach(view)
         (activity as AppCompatActivity).supportActionBar?.setDisplayHomeAsUpEnabled(true)
-    }
-
-    override fun onDestroyView(view: View) {
-        super.onDestroyView(view)
-        Log.d("onDestroyView", "DetailsController")
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        Log.d("onDestroy", "DetailsController")
     }
 
     private fun buildViews() {

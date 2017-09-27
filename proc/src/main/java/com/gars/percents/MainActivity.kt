@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        (findViewById(R.id.toolbar) as? Toolbar)?.apply {
+        (findViewById<Toolbar>(R.id.toolbar))?.apply {
             setSupportActionBar(this)
         }
 
