@@ -2,8 +2,8 @@ package com.gars.percents.details
 
 import android.graphics.Color
 import android.os.Bundle
-import android.support.v4.content.ContextCompat
-import android.support.v7.app.AppCompatActivity
+import androidx.core.content.ContextCompat
+import androidx.appcompat.app.AppCompatActivity
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -48,7 +48,7 @@ class DetailsController(bundle: Bundle) : BaseViewController(bundle) {
     private fun buildViews() {
         val calendar = Calendar.getInstance()
 
-        val greenColor = ContextCompat.getColor(activity, android.R.color.holo_green_dark)
+        val greenColor = ContextCompat.getColor(requireNotNull(activity), android.R.color.holo_green_dark)
 
         // вычисляем ежемесяцный процент
         val monthPercent = state.percent / 12f

@@ -3,18 +3,17 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 android {
-    compileSdkVersion 26
-    buildToolsVersion "26.0.1"
+    compileSdkVersion 28
+    buildToolsVersion "28.0.3"
 
     defaultConfig {
         minSdkVersion 16
-        targetSdkVersion 23
+        targetSdkVersion 28
         versionCode 1
         versionName "1.0"
     }
     buildTypes {
         release {
-//            runProguard false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
         }
     }
@@ -24,10 +23,7 @@ android {
 }
 
 dependencies {
-    compile 'com.android.support:design:26.1.0'
-    compile 'com.bluelinelabs:conductor-support:2.1.4'
-    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-}
-repositories {
-    mavenCentral()
+    implementation 'com.google.android.material:material:1.0.0'
+    implementation 'com.bluelinelabs:conductor-support:2.1.5'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 }

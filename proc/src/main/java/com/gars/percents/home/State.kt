@@ -14,4 +14,5 @@ data class State (
         var portion: Int = 1,
         var takeOff: Float = 0f,
         var takeOffEndMonth: Int = 0,
-        var takeOffCount: Float = 0f) : Serializable
+        var takeOffCount: Float = 0f
+) : Serializable
