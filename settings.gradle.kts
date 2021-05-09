@@ -8,5 +8,6 @@ pluginManagement {
 includeBuild("include-build-dependency")
 
 include(
-    ":proc"
+    ":proc",
+    ":feature:navigation"
 )

@@ -11,6 +11,10 @@ android {
     compileSdkVersion(AndroidConfig.compileSdk)
     buildToolsVersion(AndroidConfig.buildToolsVersion)
 
+    buildFeatures {
+        viewBinding = true
+    }
+
     defaultConfig {
 
         minSdkVersion(AndroidConfig.minSdk)
@@ -50,8 +54,8 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = AndroidConfig.targetJVM
+        targetCompatibility = AndroidConfig.targetJVM
     }
 
     tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
@@ -65,12 +69,21 @@ android {
 }
 
 dependencies {
+    implementation(project(mapOf("path" to ":feature:navigation")))
+
     implementation (Libraries.coreAndroidx)
+    implementation (Libraries.fragmentAndroidx)
     implementation (Libraries.materialDesign)
-    implementation (Libraries.conductor)
+    implementation (Libraries.viewBinding)
     implementation (Libraries.kotlinStdlib)
     implementation (Libraries.koin)
     implementation (Libraries.koinExt)
+    implementation (Libraries.mviCore)
+    implementation (Libraries.mviBinder)
+    implementation (Libraries.mviAndroid)
+    implementation (Libraries.rxJava)
+    implementation (Libraries.rxAndroid)
+    implementation (Libraries.timber)
 
     testImplementation(Libraries.jUnit)
 }

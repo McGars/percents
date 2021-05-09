@@ -1,14 +1,11 @@
 <resources>
 
-    <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        <!-- Customize your theme here. -->
-        <item name="colorPrimaryDark">@android:color/holo_green_dark</item>
+    <style name="AppTheme.TextAppearance.Caption" parent="TextAppearance.MaterialComponents.Caption">
+        <item name="android:textColor">@color/black_overlay_35</item>
     </style>
 
-    <style name="ToolbarStyle" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
-        <!-- Customize your theme here. -->
-        <item name="colorAccent">@color/white_overlay_90</item>
+    <style name="AppTheme.TextAppearance.Number" parent="TextAppearance.MaterialComponents.Body2">
+        <item name="android:textColor">@color/black_overlay_35</item>
     </style>
 
 </resources>

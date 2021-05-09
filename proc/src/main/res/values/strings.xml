@@ -2,23 +2,25 @@
 <resources>
 
     <string name="app_name">Percent calculator</string>
-    <string name="percent_state">Percent rate</string>
-    <string name="year_state">Years contribution</string>
-    <string name="portion_state">Number of depositors</string>
-    <string name="deposit_state">The initial deposit</string>
-    <string name="months_add_state">Monthly\nrefill on:</string>
-    <string name="takeoff_state">monthly withdrawal</string>
-    <string name="takeoff_count_state">How remove</string>
-    <string name="count">Go</string>
-    <string name="tvDate">Date</string>
-    <string name="incomming">Profit</string>
-    <string name="done">Total</string>
-    <string name="takeoff">Removal</string>
-    <string name="invite">Month add</string>
-    <string name="prc_in">Percents</string>
-    <string name="endtakeoff">Month stop removal</string>
-    <string name="months_add_state_break">Month cancel add</string>
-    <string name="details">Details</string>
-    <string name="persendInMonth">%.2f%% in month</string>
+    <string name="result_page_result">Result</string>
+    <string name="home_page_percent_rate">Percent rate</string>
+    <string name="home_page_years_contribution">Years contribution</string>
+    <string name="home_page_depositors">Depositors</string>
+    <string name="home_page_deposit">The initial deposit</string>
+    <string name="home_page_add_in_months">Monthly adding</string>
+    <string name="home_page_break_add_in_months">Month when stop adding</string>
+    <string name="home_page_takeoff_month">Monthly takeoff</string>
+    <string name="home_page_takeoff">How much takeoff</string>
+    <string name="home_page_calculate">Go</string>
+
+    <string name="result_page_date">Date</string>
+    <string name="result_page_incomming">Profit</string>
+    <string name="result_page_total">Total</string>
+    <string name="result_page_takeoff">Takeoff</string>
+    <string name="result_page_add_in_month">Month add</string>
+    <string name="result_page_percent_in_month">Percents</string>
+    <string name="result_page_end_takeoff">Month stop takeoff</string>
+    <string name="result_page_details">Details</string>
+    <string name="result_page_persen_In_month">%.2f%% in month</string>
 
 </resources>

@@ -2,23 +2,25 @@
 <resources>
 
     <string name="app_name">Проценты, калькулятор</string>
-    <string name="percent_state">Процентная ставка</string>
-    <string name="year_state">На сколько лет вклад</string>
-    <string name="portion_state">Количество вкладчиков</string>
-    <string name="deposit_state">Первоначальный депозит</string>
-    <string name="months_add_state">Ежемесячное\nпополнение на:</string>
-    <string name="takeoff_state">С какого месяца\nснимать</string>
-    <string name="takeoff_count_state">Сколько снимать</string>
-    <string name="count">Посчитать</string>
-    <string name="tvDate">Дата</string>
-    <string name="incomming">Прибыль</string>
-    <string name="done">Итог</string>
-    <string name="takeoff">Снятие</string>
-    <string name="invite">Добавление</string>
-    <string name="prc_in">Проценты</string>
-    <string name="endtakeoff">Месяц прекращения\nснятия</string>
-    <string name="months_add_state_break">В каком месяце\nне пополнять</string>
-    <string name="details">Детали</string>
-    <string name="persendInMonth" formatted="false">%.2f%% в месяц</string>
+    <string name="home_page_percent_rate">Процентная ставка</string>
+    <string name="home_page_years_contribution">На сколько лет вклад</string>
+    <string name="home_page_depositors">Количество вкладчиков</string>
+    <string name="home_page_deposit">Первоначальный депозит</string>
+    <string name="home_page_add_in_months">Ежемесячное\nпополнение на:</string>
+    <string name="home_page_break_add_in_months">В каком месяце\nне пополнять</string>
+    <string name="home_page_takeoff_month">С какого месяца\nснимать</string>
+    <string name="home_page_takeoff">Сколько снимать</string>
+    <string name="home_page_calculate">Посчитать</string>
+
+    <string name="result_page_result">Результат</string>
+    <string name="result_page_date">Дата</string>
+    <string name="result_page_incomming">Прибыль</string>
+    <string name="result_page_total">Итог</string>
+    <string name="result_page_takeoff">Снятие</string>
+    <string name="result_page_add_in_month">Добавление</string>
+    <string name="result_page_percent_in_month">Проценты</string>
+    <string name="result_page_end_takeoff">Месяц прекращения\nснятия</string>
+    <string name="result_page_details">Детали</string>
+    <string name="result_page_persen_In_month" formatted="false">%.2f%% в месяц</string>
 
 </resources>

@@ -4,35 +4,27 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import android.view.MenuItem
-import com.bluelinelabs.conductor.Conductor
-import com.bluelinelabs.conductor.Router
-import com.bluelinelabs.conductor.RouterTransaction
-import com.gars.percents.home.HomeController
-import kotlinx.android.synthetic.main.activity_main.*
-import kotlin.properties.Delegates
+import androidx.fragment.app.commit
+import com.gars.percents.common.koin
+import com.gars.percents.home.HomeFragment
 
 
 class MainActivity : AppCompatActivity() {
-
-    private var router: Router by Delegates.notNull()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        (findViewById<Toolbar>(R.id.toolbar))?.apply {
-            setSupportActionBar(this)
-        }
+        if (savedInstanceState == null) {
+            (findViewById<Toolbar>(R.id.toolbar))?.apply {
+                setSupportActionBar(this)
+            }
 
-        router = Conductor.attachRouter(this, container, savedInstanceState)
-        if (!router.hasRootController()) {
-            router.setRoot(RouterTransaction.with(HomeController()))
-        }
-    }
+            koin.declare(supportFragmentManager, override = true)
 
-    override fun onBackPressed() {
-        if (!router.handleBack()) {
-            super.onBackPressed()
+            supportFragmentManager.commit {
+                replace(R.id.container, HomeFragment.newInstance(), "root")
+            }
         }
     }
 
