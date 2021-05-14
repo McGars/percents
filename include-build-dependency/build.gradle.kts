@@ -1,6 +1,5 @@
 
 repositories {
-    jcenter()
     google()
     mavenCentral()
     gradlePluginPortal()
@@ -14,7 +13,6 @@ plugins {
 
 buildscript {
     repositories {
-        jcenter()
         google()
     }
 }

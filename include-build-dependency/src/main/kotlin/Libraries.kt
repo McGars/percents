@@ -8,6 +8,7 @@ object Libraries {
     const val coreAndroidx = "androidx.core:core-ktx:${Versions.coreAndroidx}"
     const val fragmentAndroidx = "androidx.fragment:fragment-ktx:${Versions.coreAndroidx}"
     const val viewBinding = "com.github.kirich1409:viewbindingpropertydelegate:${Versions.viewBinding}"
+    const val adaptivetablelayout = "io.github.daxium:adaptivetablelayout:${Versions.adaptivetablelayout}"
 
     const val koin = "io.insert-koin:koin-android:${Versions.koin}"
     const val koinExt = "io.insert-koin:koin-android-ext:${Versions.koin}"
@@ -34,5 +35,6 @@ object Libraries {
         const val rxJava = "2.2.21"
         const val rxAndroid = "2.1.1"
         const val timber = "4.7.1"
+        const val adaptivetablelayout = "1.3.2"
     }
 }

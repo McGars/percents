@@ -1,10 +1,15 @@
 import com.percent.config.AndroidConfig
 import com.percent.config.KotlinConfig
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
     id("com.android.application")
-    kotlin("android")
-    kotlin("android.extensions")
+    id(BuildPlugins.Ids.kotlinAndroid)
+}
+
+repositories {
+    google()
+    maven(url = "https://jitpack.io")
 }
 
 android {
@@ -58,7 +63,7 @@ android {
         targetCompatibility = AndroidConfig.targetJVM
     }
 
-    tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
+    tasks.withType<KotlinCompile> {
         kotlinOptions.jvmTarget = KotlinConfig.targetJVM
     }
 
@@ -75,6 +80,7 @@ dependencies {
     implementation (Libraries.fragmentAndroidx)
     implementation (Libraries.materialDesign)
     implementation (Libraries.viewBinding)
+    implementation (Libraries.adaptivetablelayout)
     implementation (Libraries.kotlinStdlib)
     implementation (Libraries.koin)
     implementation (Libraries.koinExt)

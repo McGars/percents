@@ -3,8 +3,7 @@ import com.percent.config.KotlinConfig
 
 plugins {
     id(BuildPlugins.Ids.androidLibrary)
-    kotlin("android")
-    kotlin("android.extensions")
+    id(BuildPlugins.Ids.kotlinAndroid)
 }
 
 android {

@@ -79,7 +79,7 @@ interface CalculatorUseCase {
                 items += AccrualItem(
                     monthNumber = monthNumber,
                     incomingPercents = incomingPercents,
-                    takeOff = takeOff,
+                    takeOff = takeOff.takeIf { it.isNotEmpty() } ?: "-",
                     takeOffColor = takeOffColor,
                     incomingColor = incomingColor,
                     profit = profit,
@@ -141,7 +141,7 @@ interface CalculatorUseCase {
 
                 takeOffText to takeOffColor
             } else {
-                "" to 0
+                "" to Color.GRAY
             }
         }
     }

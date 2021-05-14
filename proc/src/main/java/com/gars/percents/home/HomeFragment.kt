@@ -14,7 +14,6 @@ import com.gars.percents.home.di.HomeScopeComponent
 import com.gars.percents.home.presentation.HomeView
 import com.gars.percents.home.presentation.UiHomeEvent
 import io.reactivex.subjects.PublishSubject
-import kotlinx.android.synthetic.main.fragment_home.*
 
 class HomeFragment : Fragment(R.layout.fragment_home), HomeView {
 
@@ -25,6 +24,8 @@ class HomeFragment : Fragment(R.layout.fragment_home), HomeView {
     override val source = PublishSubject.create<UiHomeEvent>()
 
     private val component: HomeScopeComponent by component()
+
+    private val bindings: FragmentHomeBinding by viewBinding(FragmentHomeBinding::bind)
 
     private val toolbarBinding: ToolbarBinding by viewBinding(R.id.toolbar)
 
@@ -40,12 +41,14 @@ class HomeFragment : Fragment(R.layout.fragment_home), HomeView {
     }
 
     private fun initHandleInputs() {
-        arrayOf(
-            etProcent, etDeposit, etMounthAdd, etMounthAddBreak, etYearState,
-            etPortion, etTakeOff, etTakeOffEndMonth, etTakeOffCount
-        ).forEach { et ->
-            et.doAfterTextChanged { editable ->
-                source.onNext(UiHomeEvent.FieldUpdate(et.id, editable.toString()))
+        with(bindings) {
+            arrayOf(
+                etProcent, etDeposit, etMounthAdd, etMounthAddBreak, etYearState,
+                etPortion, etTakeOff, etTakeOffEndMonth, etTakeOffCount
+            ).forEach { et ->
+                et.doAfterTextChanged { editable ->
+                    source.onNext(UiHomeEvent.FieldUpdate(et.id, editable.toString()))
+                }
             }
         }
     }

@@ -20,8 +20,6 @@ inline fun <reified T : KoinScopeComponent> Fragment.component(
         val params = initializer.invoke()
         val component = T::class.java.newInstance()
         component.apply {
-            val lifecycleManual: ManualLifecycle = com.badoo.binder.lifecycle.Lifecycle.manual()
-            scope.declare(lifecycleManual)
             scope.addParameters(DefinitionParameters(params))
         }
     }

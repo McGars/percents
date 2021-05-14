@@ -3,7 +3,7 @@ buildscript {
 
     repositories {
         google()
-        jcenter()
+        mavenCentral()
         maven(url = "https://kotlin.bintray.com/kotlinx")
         maven(url = "https://plugins.gradle.org/m2/")
     }
@@ -24,7 +24,7 @@ allprojects {
         google()
         maven(url = "https://kotlin.bintray.com/kotlinx")
         maven(url = "https://jitpack.io")
-        jcenter()
+        mavenCentral()
     }
 
 }
