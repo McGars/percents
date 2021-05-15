@@ -5,7 +5,7 @@ pluginManagement {
     }
 }
 
-includeBuild("include-build-dependency")
+includeBuild("buildSrc-dependency")
 
 include(
     ":proc",

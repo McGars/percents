@@ -25,12 +25,12 @@ object Libraries {
     const val jUnit = "junit:junit:${Versions.junit}"
 
     private object Versions {
-        const val koin = "3.0.1-beta-2"
+        const val koin = "3.0.1"
         const val coreAndroidx = "1.3.1"
         const val materialDesign = "1.3.0"
         const val viewBinding = "1.4.6"
         const val junit = "4.13"
-        const val kotlinVersion = "1.4.32"
+        const val kotlinVersion = "1.5.0"
         const val mviCore = "1.2.6"
         const val rxJava = "2.2.21"
         const val rxAndroid = "2.1.1"

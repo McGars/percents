@@ -52,7 +52,7 @@ class DetailsFragment : Fragment(R.layout.fragment_calculate), DetailsView,
             DetailsViewModel.State.LOADING -> Unit
             DetailsViewModel.State.ERROR -> Unit
             DetailsViewModel.State.DATA -> {
-//                binding.tvMonthPercent.text = model.month
+                toolbarBinding.toolbar.title = model.month
                 showItems(model.actuals)
             }
         }
