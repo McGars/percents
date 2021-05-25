@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="home_page_title">Calculator</string>
+    <string name="home_page_percent_rate">Percent rate</string>
+    <string name="home_page_years_contribution">Years contribution</string>
+    <string name="home_page_depositors">Depositors</string>
+    <string name="home_page_deposit">The initial deposit</string>
+    <string name="home_page_add_in_months">Monthly adding</string>
+    <string name="home_page_break_add_in_months">Month when stop adding</string>
+    <string name="home_page_takeoff_month">Monthly takeoff</string>
+    <string name="home_page_takeoff">How much takeoff</string>
+    <string name="home_page_calculate">Go</string>
+    <string name="home_page_end_takeoff">Month stop takeoff</string>
+
+</resources>

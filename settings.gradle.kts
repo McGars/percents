@@ -8,6 +8,9 @@ pluginManagement {
 includeBuild("buildSrc-dependency")
 
 include(
-    ":proc",
-    ":feature:navigation"
+    ":app",
+    ":common",
+    ":feature:navigation",
+    ":feature:home",
+    ":feature:details"
 )

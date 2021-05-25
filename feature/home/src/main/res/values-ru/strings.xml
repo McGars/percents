@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="home_page_title">Калькулятор</string>
+    <string name="home_page_percent_rate">Процентная ставка</string>
+    <string name="home_page_years_contribution">На сколько лет вклад</string>
+    <string name="home_page_depositors">Количество вкладчиков</string>
+    <string name="home_page_deposit">Первоначальный депозит</string>
+    <string name="home_page_add_in_months">Ежемесячное\nпополнение на:</string>
+    <string name="home_page_break_add_in_months">В каком месяце\nне пополнять</string>
+    <string name="home_page_takeoff_month">С какого месяца\nснимать</string>
+    <string name="home_page_takeoff">Сколько снимать</string>
+    <string name="home_page_calculate">Посчитать</string>
+    <string name="home_page_end_takeoff">Месяц прекращения\nснятия</string>
+
+</resources>

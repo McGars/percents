@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="result_page_result">Результат</string>
+    <string name="result_page_date">Дата</string>
+    <string name="result_page_incomming">Прибыль</string>
+    <string name="result_page_total">Итог</string>
+    <string name="result_page_takeoff">Снятие</string>
+    <string name="result_page_add_in_month">Добавление</string>
+    <string name="result_page_percent_in_month">Проценты</string>
+    <string name="result_page_details">Детали</string>
+    <string name="result_page_persen_In_month" formatted="false">%.2f%% в месяц</string>
+
+</resources>

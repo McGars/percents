@@ -1,0 +1,238 @@
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <include layout="@layout/appbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:padding="@dimen/dp8"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <TableLayout
+            android:id="@+id/tableLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stretchColumns="1">
+
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="1"
+                    android:layout_gravity="center_vertical"
+                    android:padding="3dip"
+                    android:text="@string/home_page_percent_rate" />
+
+                <EditText
+                    android:id="@+id/etProcent"
+                    android:layout_width="@dimen/width_etext"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:gravity="right"
+                    android:hint="10"
+                    android:inputType="numberDecimal"
+                    android:singleLine="true" />
+            </TableRow>
+
+            <include layout="@layout/view_line" />
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_column="1"
+                    android:padding="3dip"
+                    android:text="@string/home_page_deposit" />
+
+                <EditText
+                    android:id="@+id/etDeposit"
+                    android:layout_width="@dimen/width_etext"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:hint="0"
+                    android:inputType="numberDecimal"
+                    android:singleLine="true" />
+            </TableRow>
+
+            <include layout="@layout/view_line" />
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_column="1"
+                    android:padding="3dip"
+                    android:text="@string/home_page_add_in_months" />
+
+                <EditText
+                    android:id="@+id/etMounthAdd"
+                    android:layout_width="@dimen/width_etext"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:gravity="right"
+                    android:hint="0"
+                    android:inputType="numberDecimal"
+                    android:singleLine="true" />
+            </TableRow>
+
+            <include layout="@layout/view_line" />
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_column="1"
+                    android:padding="3dip"
+                    android:text="@string/home_page_break_add_in_months" />
+
+                <EditText
+                    android:id="@+id/etMounthAddBreak"
+                    android:layout_width="@dimen/width_etext"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:gravity="right"
+                    android:hint="0"
+                    android:inputType="numberDecimal"
+                    android:singleLine="true" />
+            </TableRow>
+
+            <include layout="@layout/view_line" />
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_column="1"
+                    android:padding="3dip"
+                    android:text="@string/home_page_years_contribution" />
+
+                <EditText
+                    android:id="@+id/etYearState"
+                    android:layout_width="@dimen/width_etext"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:hint="1"
+                    android:inputType="number"
+                    android:singleLine="true" />
+            </TableRow>
+
+            <include layout="@layout/view_line" />
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_column="1"
+                    android:padding="3dip"
+                    android:text="@string/home_page_depositors" />
+
+                <EditText
+                    android:id="@+id/etPortion"
+                    android:layout_width="@dimen/width_etext"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:gravity="right"
+                    android:hint="1"
+                    android:inputType="numberDecimal"
+                    android:singleLine="true" />
+            </TableRow>
+
+            <include layout="@layout/view_line" />
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_column="1"
+                    android:padding="3dip"
+                    android:text="@string/home_page_takeoff_month" />
+
+                <EditText
+                    android:id="@+id/etTakeOff"
+                    android:layout_width="@dimen/width_etext"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:gravity="right"
+                    android:hint="0"
+                    android:inputType="numberDecimal"
+                    android:singleLine="true" />
+            </TableRow>
+
+            <include layout="@layout/view_line" />
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_column="1"
+                    android:padding="3dip"
+                    android:text="@string/home_page_end_takeoff" />
+
+                <EditText
+                    android:id="@+id/etTakeOffEndMonth"
+                    android:layout_width="@dimen/width_etext"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:gravity="right"
+                    android:hint="0"
+                    android:inputType="numberDecimal"
+                    android:singleLine="true" />
+            </TableRow>
+
+            <include layout="@layout/view_line" />
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_column="1"
+                    android:padding="3dip"
+                    android:text="@string/home_page_takeoff" />
+
+                <EditText
+                    android:id="@+id/etTakeOffCount"
+                    android:layout_width="@dimen/width_etext"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:hint="0"
+                    android:inputType="numberDecimal"
+                    android:singleLine="true" />
+            </TableRow>
+        </TableLayout>
+
+    </ScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
