@@ -90,6 +90,7 @@ dependencies {
     implementation (Libraries.mviBinder)
     implementation (Libraries.mviAndroid)
     implementation (Libraries.timber)
+    implementation (Libraries.rxJava)
 
     testImplementation(Libraries.jUnit)
 }

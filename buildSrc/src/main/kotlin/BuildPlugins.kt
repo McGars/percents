@@ -17,6 +17,6 @@ object BuildPlugins {
     }
 
     object Versions {
-        const val agp = "4.2.1"
+        const val agp = "7.0.0-beta02"
     }
 }
